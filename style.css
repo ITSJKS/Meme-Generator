@@ -1,0 +1,31 @@
+header >img {
+    width : 75%;
+    height:200px;
+}
+header{
+    display: flex;
+}
+header{
+    text-align: center;
+    font-size:50px;
+}
+.meme{
+    position:relative;
+    text-align: center;
+    display: flex;
+}
+.meme >img{
+    height: 400px;
+    width: 70%;
+    
+}
+.top{
+    position:absolute;
+    top:5px;
+    left:5%;
+}
+.bottom{
+    position: absolute;
+    bottom:5px;
+    left:5%;
+}
