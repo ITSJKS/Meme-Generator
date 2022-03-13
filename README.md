@@ -69,6 +69,32 @@ The  UI of our  chat bot is a web application and we are using NodeJS to create 
 
 ### Working of our AI model
 
+#### Libraries Used
+
+In this Model we are using a Bunch of libraries such as nltk(Natural language tool kit),which contains 
+all the tools for cleaning up text and preparing and for deep learning algorithms we are using
+json, which loads json files directly into Python, pickle, which loads pickle files, 
+(numpy) which can perform linear algebra operations very efficiently, and keras, which is the deep learning framework we’ll be using.
+we will use a nested for loop to extract all of the words within “patterns” and add them to our words list.
+
+#### Process 
+
+We then add to our documents list each pair of patterns with their corresponding tag.
+We also add the tags into our classes list, and we use a simple conditional statement to prevent repeats.
+Next, we will take the words list and lemmatize and lowercase all the words inside.Now we will initialize our training data with a variable training.
+We have a feature called output_row which simply acts as a key for the list. We then shuffle our training set and do a train-test-split,
+with the patterns being the X variable and the intents being the Y variable.
+Now that we have our training and test data ready, we will now use a deep learning model from keras called Sequential.
+This particular network has 3 layers, with the first one having 128 neurons, the second one having 64 neurons
+and the third one having the number of intents as the number of neurons.
+After the model is trained, the whole thing is turned into a numpy array and saved as chatbot_model.h5.
+We have the clean_up_sentence() function which cleans up any sentences that are inputted. This function is used in the bow() function, 
+which takes the sentences that are cleaned up and creates a bag of words that are used for predicting classes. 
+
+#### Prediction
+
+In our predict_class() function, we use an error threshold of 0.25 to avoid too much overfitting.
+The function getResponse() takes the list outputted and checks the json file and outputs the most response with the highest probability.
 ## Model Accuracy 
 
 Our model is giving an Accuracy of 90%, with tranining on better dataset we can get it to 95%+.
